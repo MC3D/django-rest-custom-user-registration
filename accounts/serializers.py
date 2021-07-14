@@ -9,5 +9,5 @@ class RegistrationSerializer(RegisterSerializer):
 
     # This method is called at save
     def custom_signup(self, request, user):
-        user.phone_number = self.validated_data.get('phone_number', '')
+        user.phone_number = self.validated_data.get('phone_number')
         user.save(update_fields=['phone_number',])
